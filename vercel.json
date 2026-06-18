@@ -1,9 +1,23 @@
 {
-  "experimentalServices": {
-    "libretv": {
-      "type": "web",
-      "routePrefix": "/",
-      "entrypoint": "server.mjs"
+  "rewrites": [
+    {
+      "source": "/proxy/:path*",
+      "destination": "/api/proxy/:path*"
+    },
+    {
+      "source": "/s=:query",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/player.html",
+      "destination": "/player.html"
+    },
+    {
+      "source": "/player.html/:path*",
+      "destination": "/player.html"
     }
-  }
+  ],
+  "buildCommand": "",
+  "outputDirectory": ".",
+  "installCommand": ""
 }
